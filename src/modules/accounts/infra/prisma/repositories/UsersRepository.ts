@@ -58,6 +58,9 @@ class UsersRepository implements IUsersRepository {
   async findByConfirmeds(): Promise<User[]> {
     const userIsConfirmed = await prisma.user.findMany({
       where: { isConfirmed: true },
+      include: {
+        Family: true
+      }
     });
     return userIsConfirmed;
   }

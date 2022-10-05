@@ -15,7 +15,7 @@ class FindFamiliesController {
     const findFamiliesUseCase = container.resolve(FindFamiliesUseCase);
     const families = await findFamiliesUseCase.execute(args);
 
-    return response.status(201).json({
+    return response.status(200).json({
       data: {
         items: families,
         total: families.length

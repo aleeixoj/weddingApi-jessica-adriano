@@ -10,7 +10,12 @@ class FindConfirmedsController {
 
     return response
       .status(200)
-      .json({ data: confirmeds, count: confirmeds.length });
+      .json({
+        data: {
+          items: confirmeds,
+          total: confirmeds.length
+        }
+      });
   }
 }
 export { FindConfirmedsController };
